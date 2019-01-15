@@ -14,7 +14,7 @@ class App extends React.Component {
       <div>
         <h1>Example 6</h1>
         Current time: {this.state.date.toLocaleTimeString()}
-        <h2>Hier met een timeout elke seconde een setState doen...</h2>
+        <h2>TODO Hier met een timeout elke seconde een setState doen...</h2>
       </div>
     );
   }
