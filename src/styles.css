@@ -1,0 +1,18 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-size: 18pt;
+  width: 60px;
+}
+
+.stack-horizontally {
+  padding: 10px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -4,16 +4,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    // Set initial state.
     this.state = {
-      date: new Date()
+      number: 0
     };
   }
 
   render() {
     return (
       <div>
-        <h1>Example 5</h1>
-        Current time: {this.state.date.toLocaleTimeString()}
+        <h1>Example 5: initial state</h1>
+        <h3>{this.state.number}</h3>
       </div>
     );
   }

@@ -4,31 +4,32 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    // Set initial state explicitely.
     this.state = {
-      date: new Date()
+      counter: 0
     };
   }
 
-  componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
-  }
+  incrementCounter = () => {
+    // Increment counter by setting state implicitely.
+    this.setState({ counter: this.state.counter + 1 });
+  };
 
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  tick() {
-    this.setState({
-      date: new Date()
-    });
-  }
+  decrementCounter = () => {
+    // Decrement counter by setting state implicitely.
+    this.setState({ counter: this.state.counter - 1 });
+  };
 
   render() {
     return (
       <div>
-        <h1>Example 6</h1>
-        Current time: {this.state.date.toLocaleTimeString()}
-        <h2>TODO Hier met een timeout elke seconde een setState doen...</h2>
+        <h1>Example 6: setState</h1>
+
+        <div class="stack-horizontally">
+          <button onClick={this.decrementCounter}> - </button>
+          <h3>{this.state.counter}</h3>
+          <button onClick={this.incrementCounter}> + </button>
+        </div>
       </div>
     );
   }

@@ -4,7 +4,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Example 4</h1>
+        <h1>Example 4: classes and props</h1>
         Hello {this.props.name}
       </div>
     );
