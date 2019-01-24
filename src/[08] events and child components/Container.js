@@ -13,28 +13,20 @@ class Container extends React.Component {
   findCounter = id => this.state.counters.find(counter => counter.id === id);
 
   incrementCounter = id => {
-    this.updateCounters(id, value => value + 1);
+    this.updateCounter(id, value => value + 1);
   };
 
   decrementCounter = id => {
-    this.updateCounters(id, value => value - 1);
+    this.updateCounter(id, value => value - 1);
   };
 
-  updateCounters(id, updateValue) {
-    var updatedCounters = this.state.counters.map(counter => {
-      // Find the item with the matching id
+  updateCounter(id, updateValue) {
+    let updatedCounters = this.state.counters.map(counter => {
       if (counter.id === id) {
-        // Return a new object with the updated counter
-        return {
-          ...counter, // copy the existing counter
-          value: updateValue(counter.value)
-        };
+        return { ...counter, value: updateValue(counter.value) };
       }
-
-      // Leave every other counters unchanged
       return counter;
     });
-
     this.setState({ counters: updatedCounters });
   }
 
