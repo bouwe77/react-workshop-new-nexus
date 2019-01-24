@@ -11,7 +11,7 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <div class="stack-horizontally">
+      <div className="stack-horizontally">
         <button onClick={this.handleMinusClick}> - </button>
         <h3>{this.props.counter.value}</h3>
         <button onClick={this.handlePlusClick}> + </button>

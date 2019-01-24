@@ -1,6 +1,5 @@
 import React from "react";
 
-// Child components:
 import Welcome from "./Welcome";
 
 function App() {

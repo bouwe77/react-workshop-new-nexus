@@ -1,10 +1,14 @@
 import React from "react";
 
-import Container from "./Container";
+import Header from "./Header";
+import TreeStructure from "./TreeStructure";
+import CounterContainer from "./CounterContainer";
 
 const App = () => (
   <div>
-    <Container />
+    <Header />
+    <CounterContainer />
+    <TreeStructure />
   </div>
 );
 
