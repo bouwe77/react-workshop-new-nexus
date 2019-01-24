@@ -1,0 +1,7 @@
+What have we learned?
+1) setState for objects with ...
+2) Separation of concern by having a Container component responsible for state only 
+   and two presentational components (Counters and Counter) with UI rendering only.
+3) Passing functions as props.
+4) Specifying a key for multiple instances of the same Component so React can distinguish them.
+5) Difference between DOM event handlers and "domain" event handlers.

@@ -9,8 +9,9 @@
   "main3": "src/[03] props/index.js",
   "main4": "src/[04] classes + props/index.js",
   "main5": "src/[05] initial state/index.js",
-  "main": "src/[06] setState/index.js",
-  "main7": "src/[07] event handlers/index.js",
+  "main6": "src/[06] setState and event handling/index.js",
+  "main": "src/[07] setState array of objects/index.js",
+  "main8": "src/[08] events and child components/index.js",
 
   "dependencies": {
     "react": "16.5.2",

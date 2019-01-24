@@ -23,9 +23,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Example 6: setState</h1>
+        <h1>Example 6: setState and event handling</h1>
 
-        <div class="stack-horizontally">
+        <div className="stack-horizontally">
           <button onClick={this.decrementCounter}> - </button>
           <h3>{this.state.counter}</h3>
           <button onClick={this.incrementCounter}> + </button>
