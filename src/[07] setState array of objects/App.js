@@ -28,11 +28,11 @@ class App extends React.Component {
         // Return a new object with the updated counter
         return {
           ...counter, // copy the existing counter
-          value: updateValue(counter.value)
+          value: updateValue(counter.value) // and update only the value
         };
       }
 
-      // Leave every other counters unchanged
+      // Leave every other counter unchanged
       return counter;
     });
 
