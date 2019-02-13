@@ -1,3 +1,5 @@
 # React.js workshop New Nexus
 
-TODO...
+- Slides: https://234l12jrp0.codesandbox.io/
+- Example code: https://github.com/bouwe77/react-workshop-new-nexus
+- nitwit app: ...
