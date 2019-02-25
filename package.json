@@ -11,7 +11,8 @@
   "main5": "src/[05] initial state/index.js",
   "main6": "src/[06] setState and event handling/index.js",
   "main7": "src/[07] setState array of objects/index.js",
-  "main": "src/[08] events and child components/index.js",
+  "main8": "src/[08] events and child components/index.js",
+  "main": "src/[09] props.children/index.js",
 
   "dependencies": {
     "react": "16.5.2",
