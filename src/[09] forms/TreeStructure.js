@@ -8,17 +8,8 @@ const TreeStructure = () => (
         App
         <ul>
           <li>Header</li>
-          <li>
-            CounterContainer
-            <ul>
-              <li>
-                Counters
-                <ul>
-                  <li>Counter</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+          <li>Form</li>
+          <li>ToDoList</li>
           <li>TreeStructure</li>
         </ul>
       </li>

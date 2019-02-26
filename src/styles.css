@@ -16,3 +16,10 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+
+.tree {
+  width: 300px;
+  border: 1px solid lightgrey;
+  color: grey;
+  margin: 50px;
+}

@@ -2,22 +2,18 @@ import React from "react";
 
 import Header from "./Header";
 import Form from "./Form";
-import Registrations from "./Registrations";
+import ToDoList from "./ToDoList";
+import TreeStructure from "./TreeStructure";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { registrations: [] };
+    this.state = { todos: [] };
   }
 
-  register = name => {
-    this.setState(state => {
-      const registrations = [...state.registrations, state.value];
-
-      return {
-        list,
-        value: ""
-      };
+  addToDo = description => {
+    this.setState({
+      todos: [...this.state.todos, { description }]
     });
   };
 
@@ -25,8 +21,9 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <Form register={this.register} />
-        <Registrations registrations={this.state.registrations} />
+        <Form addToDo={this.addToDo} />
+        <ToDoList todos={this.state.todos} />
+        <TreeStructure />
       </div>
     );
   }
