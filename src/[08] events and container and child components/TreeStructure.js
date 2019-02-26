@@ -6,7 +6,6 @@ const TreeStructure = () => (
       App
       <ul>
         <li>Header</li>
-        <li>TreeStructure</li>
         <li>
           CounterContainer
           <ul>
@@ -18,6 +17,7 @@ const TreeStructure = () => (
             </li>
           </ul>
         </li>
+        <li>TreeStructure</li>
       </ul>
     </li>
   </ul>
