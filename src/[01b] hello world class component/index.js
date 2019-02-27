@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../styles.css";
 
-function Welcome() {
-  return <div>Example 1: Hello World!</div>;
+class Welcome extends React.Component {
+  render() {
+    return <div>Example 1b: Hello World!</div>;
+  }
 }
 
 const rootElement = document.getElementById("root");

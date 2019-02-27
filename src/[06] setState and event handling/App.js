@@ -13,13 +13,15 @@ class App extends React.Component {
   incrementCounter = () => {
     // Increment counter by setting state implicitely with setState.
     // However, note that the entire state is replaced.
-    this.setState({ counter: this.state.counter + 1 });
+    const newCounterValue = this.state.counter + 1;
+    this.setState({ counter: newCounterValue });
   };
 
   decrementCounter = () => {
     // Decrement counter by setting state implicitely with setState.
     // However, note that the entire state is replaced.
-    this.setState({ counter: this.state.counter - 1 });
+    const newCounterValue = this.state.counter - 1;
+    this.setState({ counter: newCounterValue });
   };
 
   render() {
