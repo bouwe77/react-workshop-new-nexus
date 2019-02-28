@@ -1,9 +1,5 @@
 # React.js workshop New Nexus
 
-## Slides
-
-https://234l12jrp0.codesandbox.io/
-
 ## Example code
 
 https://codesandbox.io/s/zz65x07vnx
