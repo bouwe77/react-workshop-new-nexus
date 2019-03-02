@@ -12,8 +12,8 @@
   "main5": "src/[05] initial state/index.js",
   "main6": "src/[06] setState and event handling/index.js",
   "main7": "src/[07] setState array of objects/index.js",
-  "main": "src/[07a] setState array of objects with callbacks/index.js",
-  "main8": "src/[08] forms/index.js",
+  "main7a": "src/[07a] setState array of objects with callbacks/index.js",
+  "main": "src/[08] forms/index.js",
   "main10": "src/[10] props.children/index.js",
 
   "dependencies": {

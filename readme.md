@@ -10,4 +10,4 @@ https://codesandbox.io/s/2z748522my
 
 ## Nitwit REST API
 
-...
+https://nitwit-api.azurewebsites.net
