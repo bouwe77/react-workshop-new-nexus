@@ -45,14 +45,20 @@ class App extends React.Component {
   };
 
   render() {
-    return (
-      <div>
-        <Header />
-        <Form addToDo={this.addToDo} />
-        <ToDoList todos={this.state.todos} />
-        <TreeStructure />
-      </div>
-    );
+    if (this.state.error) {
+      return <div>Error: {this.state.error.message}</div>;
+    } else if (!this.state.isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <div>
+          <Header />
+          <Form addToDo={this.addToDo} />
+          <ToDoList todos={this.state.todos} />
+          <TreeStructure />
+        </div>
+      );
+    }
   }
 }
 
