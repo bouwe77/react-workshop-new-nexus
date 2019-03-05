@@ -9,7 +9,7 @@ import TreeStructure from "./TreeStructure";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.url = "http://localhost:3000/todos";
+    this.url = "https://nitwit-api.azurewebsites.net/todos";
     this.state = { todos: [] };
   }
 
