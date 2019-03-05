@@ -10,11 +10,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.url = "https://nitwit-api.azurewebsites.net/todos";
-    this.state = { todos: [] };
+    this.state = { isLoaded: false, todos: [] };
   }
 
   componentDidMount = () => {
-    this.getTimeline();
+    this.getToDos();
   };
 
   getToDos = () => {
