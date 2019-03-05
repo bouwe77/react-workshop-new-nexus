@@ -1,41 +1,64 @@
 import React from "react";
-
-import Cookie from "./Cookie";
+import uuidv4 from "uuid/v4";
+import Thingy from "./Thingy";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedCookieId: 0,
-      cookies: [
-        { id: 1, eaten: false },
-        { id: 2, eaten: false },
-        { id: 3, eaten: false }
-      ]
+      selectedId: 0,
+      thingies: [{ id: uuidv4(), name: "bla" }]
     };
   }
 
-  selectCookie = cookieId => {
-    this.setState({ selectedCookieId: cookieId });
+  addThingy = () => {
+    const newThingy = { id: uuidv4(), name: "" };
+    const thingies = [...this.state.thingies, newThingy];
+    this.setState({
+      thingies: thingies
+    });
   };
 
-  eatCookie = cookieId => {
-    //todo...
+  updateThingy = (id, name) => {
+    const thingies = this.state.thingies.map(thingy => {
+      if (thingy.id === id) {
+        return {
+          ...thingy,
+          name
+        };
+      }
+      return thingy;
+    });
+    this.setState({ thingies });
+  };
+
+  removeThingy = id => {
+    const thingies = this.state.thingies.filter(thingy => thingy.id !== id);
+    this.setState({ thingies });
+  };
+
+  selectThingy = id => {
+    this.setState({ selectedId: id });
   };
 
   render() {
     return (
       <div>
         <h1>Example 7: setState for array of objects</h1>
-        {this.state.selectedCookieId}
+        {this.state.selectedId}
         <br />
-        {this.state.cookies.map(cookie => (
-          <Cookie
-            key={cookie.id}
-            cookie={cookie}
-            selectCookie={this.selectCookie}
-            eatCookie={this.eatCookie}
+        <br />
+        <button onClick={this.addThingy}>+</button>
+        <br />
+        {this.state.thingies.map(thingy => (
+          <Thingy
+            key={thingy.id}
+            thingy={thingy}
+            selectThingy={this.selectThingy}
+            addThingy={this.addThingy}
+            updateThingy={this.updateThingy}
+            removeThingy={this.removeThingy}
           />
         ))}
       </div>
