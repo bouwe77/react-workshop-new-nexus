@@ -57,6 +57,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Example 7: setState for array of objects</h1>
+
         <Buttons
           addPhoto={this.addPhoto}
           updatePhoto={this.updatePhoto}
