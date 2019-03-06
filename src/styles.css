@@ -9,6 +9,10 @@ button {
   width: 60px;
 }
 
+.buttons {
+  margin-bottom: 10px;
+}
+
 .stack-horizontally {
   padding: 10px;
   width: 200px;
@@ -22,4 +26,16 @@ button {
   border: 1px solid lightgrey;
   color: grey;
   margin: 50px;
+}
+
+.photos {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.photo {
+  margin-right: 5px;
+  padding: 0;
 }

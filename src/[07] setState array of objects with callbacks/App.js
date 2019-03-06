@@ -1,6 +1,7 @@
 import React from "react";
-import uuidv4 from "uuid/v4";
-import Thingy from "./Thingy";
+import Photo from "./Photo";
+import Buttons from "./Buttons";
+import getRandomPhoto from "./getRandomPhoto";
 
 class App extends React.Component {
   constructor(props) {
@@ -8,37 +9,47 @@ class App extends React.Component {
 
     this.state = {
       selectedId: 0,
-      thingies: [{ id: uuidv4(), name: "bla" }]
+      photos: []
     };
   }
 
-  addThingy = () => {
-    const newThingy = { id: uuidv4(), name: "" };
-    const thingies = [...this.state.thingies, newThingy];
+  addPhoto = () => {
+    // Add a random photo to the state.
+    const newPhoto = getRandomPhoto();
+    const photos = [...this.state.photos, newPhoto];
     this.setState({
-      thingies: thingies
+      photos: photos
     });
+
+    this.selectPhoto(newPhoto.id);
   };
 
-  updateThingy = (id, name) => {
-    const thingies = this.state.thingies.map(thingy => {
-      if (thingy.id === id) {
+  updatePhoto = () => {
+    // Update an existing photo with a new one.
+    const newPhoto = getRandomPhoto();
+
+    const photos = this.state.photos.map(photo => {
+      if (photo.id === this.state.selectedId) {
         return {
-          ...thingy,
-          name
+          ...photo,
+          url: newPhoto.url
         };
       }
-      return thingy;
+      return photo;
     });
-    this.setState({ thingies });
+    this.setState({ photos });
   };
 
-  removeThingy = id => {
-    const thingies = this.state.thingies.filter(thingy => thingy.id !== id);
-    this.setState({ thingies });
+  removePhoto = () => {
+    // Rmove a photo from the state.
+    const photos = this.state.photos.filter(
+      photo => photo.id !== this.state.selectedId
+    );
+    this.setState({ photos });
   };
 
-  selectThingy = id => {
+  selectPhoto = id => {
+    // Update the state with the id of the selected photo.
     this.setState({ selectedId: id });
   };
 
@@ -46,21 +57,21 @@ class App extends React.Component {
     return (
       <div>
         <h1>Example 7: setState for array of objects</h1>
-        {this.state.selectedId}
-        <br />
-        <br />
-        <button onClick={this.addThingy}>+</button>
-        <br />
-        {this.state.thingies.map(thingy => (
-          <Thingy
-            key={thingy.id}
-            thingy={thingy}
-            selectThingy={this.selectThingy}
-            addThingy={this.addThingy}
-            updateThingy={this.updateThingy}
-            removeThingy={this.removeThingy}
-          />
-        ))}
+        <Buttons
+          addPhoto={this.addPhoto}
+          updatePhoto={this.updatePhoto}
+          removePhoto={this.removePhoto}
+        />
+
+        <div className="photos">
+          {this.state.photos.map(photo => (
+            <Photo
+              key={photo.id}
+              photo={photo}
+              selectPhoto={this.selectPhoto}
+            />
+          ))}
+        </div>
       </div>
     );
   }
