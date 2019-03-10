@@ -14,13 +14,15 @@ class App extends React.Component {
   incrementCounter = () => {
     // Increment counter by setting state implicitely with setState.
     // However, note that the entire state is replaced.
-    // const newCounterValue = this.state.counter + 1;
-    // this.setState({ counter: newCounterValue });
+    //const newCounterValue = this.state.counter + 1;
+    this.setState({ counter: this.state.counter + 1 });
 
     // Alternative, using a function that returns the updated state:
-    this.setState(state => {
-      return { counter: this.state.counter + 1 };
-    });
+    // Note that this.state is not referred to directly, this is something
+    // the setState() function will do for you, making it a bit cleaner.
+    // this.setState(state => {
+    //   return { counter: state.counter + 1 };
+    // });
   };
 
   decrementCounter = () => {
