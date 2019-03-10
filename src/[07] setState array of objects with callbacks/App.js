@@ -37,7 +37,7 @@ class App extends React.Component {
       }
       return photo;
     });
-    this.setState({ photos });
+    this.setState({ photos: photos });
   };
 
   removePhoto = () => {
@@ -45,7 +45,7 @@ class App extends React.Component {
     const photos = this.state.photos.filter(
       photo => photo.id !== this.state.selectedId
     );
-    this.setState({ photos });
+    this.setState({ photos: photos });
   };
 
   selectPhoto = id => {

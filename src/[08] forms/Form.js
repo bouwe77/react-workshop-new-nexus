@@ -7,7 +7,8 @@ class Form extends React.Component {
   }
 
   onChangeDescription = event => {
-    this.setState({ description: event.target.value });
+    const textbox = event.target;
+    this.setState({ description: textbox.value });
   };
 
   submitForm = event => {
