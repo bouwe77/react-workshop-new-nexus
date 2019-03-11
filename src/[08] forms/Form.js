@@ -19,7 +19,7 @@ class Form extends React.Component {
     const description = this.state.description;
     this.props.addToDo(description);
 
-    // Clear the input.
+    // Clear the description so the textbox is cleared.
     this.setState({ description: "" });
   };
 
@@ -29,7 +29,9 @@ class Form extends React.Component {
         <input
           type="text"
           name="description"
+          // The value is "read" from state: one way binding
           value={this.state.description}
+          // Events are used to update state
           onChange={this.onChangeDescription}
         />
         <br />
