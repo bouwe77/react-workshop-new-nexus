@@ -1,36 +1,36 @@
 import React from "react";
 
 import Header from "./Header";
+import Example from "./Example";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.numberOfExamples = 10;
-    const initialExampleIndex = 0;
+    const initialExampleId = 1;
     this.state = {
-      currentExampleIndex: initialExampleIndex
+      currentExampleId: initialExampleId
     };
   }
 
-  hasNext = currentExampleIndex =>
-    currentExampleIndex < this.numberOfExamples - 1;
+  hasNext = currentExampleId => currentExampleId < this.numberOfExamples;
 
-  hasPrev = currentExampleIndex =>
-    this.numberOfExamples > 0 && currentExampleIndex > 0;
+  hasPrev = currentExampleId =>
+    this.numberOfExamples > 0 && currentExampleId > 1;
 
   nextExample = () => {
-    if (this.hasNext(this.state.currentExampleIndex)) {
+    if (this.hasNext(this.state.currentExampleId)) {
       this.setState({
-        currentExampleIndex: this.state.currentExampleIndex + 1
+        currentExampleId: this.state.currentExampleId + 1
       });
     }
   };
 
   prevExample = () => {
-    if (this.hasPrev(this.state.currentExampleIndex)) {
+    if (this.hasPrev(this.state.currentExampleId)) {
       this.setState({
-        currentExampleIndex: this.state.currentExampleIndex - 1
+        currentExampleId: this.state.currentExampleId - 1
       });
     }
   };
@@ -41,9 +41,10 @@ export default class App extends React.Component {
         <Header
           nextExample={this.nextExample}
           prevExample={this.prevExample}
-          hasNext={this.hasNext(this.state.currentExampleIndex)}
-          hasPrev={this.hasPrev(this.state.currentExampleIndex)}
+          hasNext={this.hasNext(this.state.currentExampleId)}
+          hasPrev={this.hasPrev(this.state.currentExampleId)}
         />
+        <Example currentExampleId={this.state.currentExampleId} />
       </div>
     );
   }
