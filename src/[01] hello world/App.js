@@ -9,4 +9,5 @@ function Welcome() {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<Welcome />, rootElement);
 
+// Note that this export is only here to make my Examples App work...
 export default Welcome;
