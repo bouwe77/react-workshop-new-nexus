@@ -70,6 +70,7 @@ class App extends React.Component {
               key={photo.id}
               photo={photo}
               selectPhoto={this.selectPhoto}
+              isPhotoSelected={this.state.selectedId === photo.id}
             />
           ))}
         </div>

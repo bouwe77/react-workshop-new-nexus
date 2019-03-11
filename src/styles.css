@@ -35,7 +35,12 @@ button {
   justify-content: space-between;
 }
 
-.photo {
+.photo,
+.photo-selected {
   margin-right: 5px;
   padding: 0;
+}
+
+.photo-selected {
+  border: 2px solid darkred;
 }

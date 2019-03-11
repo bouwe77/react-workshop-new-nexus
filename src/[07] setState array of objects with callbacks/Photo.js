@@ -6,8 +6,9 @@ class Photo extends React.Component {
   };
 
   render = () => {
+    const className = this.props.isPhotoSelected ? "photo-selected" : "photo";
     return (
-      <div className="photo">
+      <div className={className}>
         <img
           src={this.props.photo.url}
           onClick={this.handleSelectClick}
