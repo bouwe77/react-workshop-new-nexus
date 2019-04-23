@@ -1,4 +1,4 @@
-# React.js workshop New Nexus
+# React.js workshop New Nexus (march 2019)
 
 ## Presentation slides
 
